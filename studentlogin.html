@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="studentloginstyle.css">
+   <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    background-color: gray;
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+.loginform{
+    width: 420px;
+    background: rgba(255, 255, 255, 0.126);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+.loginform h1{
+    font-size: 36px;
+    text-align: center;
+}
+.inputbx{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+input{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(225,225,225,.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+.inputbx input::placeholder{
+    color: white;
+}
+.inputbx box-icon{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px; 
+}
+.loginform .btn{
+    width: 100%;
+    border: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0px 0px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+}
+.no-calendar::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+
+   </style>
+</head>
+<body>
+    <div class="loginform">
+        <form action="">
+            <h1>Login</h1>
+            <div class="inputbx">
+                <input type="text" placeholder="USN" id="idno">
+                <box-icon name='user-pin'></box-icon>
+            </div>
+            <div class="inputbx">
+                <input class="no-calendar" type="date" id="date">
+                <box-icon type='solid' name='calendar'></box-icon>
+            </div>
+            <input style="color: black; background: white;" type="button" class="btn" value="SUBMIT" onclick="showresult()"></a>      
+        </form>
+    </div>
+</body>
+<script>
+    function showresult(){
+            var usn=document.getElementById("idno").value;
+            var date=document.getElementById("date").value;
+            var pattern1=/2SD\d{2}[A-Z]{2}\d{3}/;
+
+            if(usn!=""&&date!=""){
+                if(usn.match(pattern1)){
+                    window.location.href="studentmarksdisplay.html";
+                }
+                else{
+                    alert("Invalid USN");
+                }
+
+            }
+            else{
+                alert("Please fill date and usn");
+            }
+    }
+</script>
+</html>
