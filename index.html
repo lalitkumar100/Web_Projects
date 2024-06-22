@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background-image:url(background.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 3px 50px;
+  
+
+}
+nav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.logo{
+  width: 393px;
+  cursor: pointer;
+}
+ul{
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  padding-right: 60px;
+
+}
+ul li{
+  display: inline;
+  margin: 10px 20px;
+}
+ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-style: bold;
+}
+
+.butn{
+ display: flex;
+ align-items: center;
+ padding: 10px 20px;
+ border: 0;
+ outline: 0;
+ border-radius: 5px;
+ background: #F5168D;
+ color: white;
+ font-weight: 500 ;
+ cursor: pointer;
+font-size: 20px;
+}
+a{
+  text-decoration: none;
+}
+.content{
+   margin-top: 7%;
+   color: white;
+   max-width: 620px ;
+}
+.content h1{
+  font-size: 70px;  
+  font-weight: 600;
+  line-height: 85px;
+  margin-bottom: 25px;
+
+}
+p{
+  font-size: 45px;
+  color: #afe519
+}
+i .fa-solid .fa-right-to-bracket{
+    padding-right: 11px;
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <img src="sdm_logo3.jpeg.jpg" alt="" class="logo">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="adminstratorloginpage.html">ADMINISTRATIVE</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>
+            <a href="studentlogin.html"><input class="butn" type="button" value="login"></a>
+        </nav>
+        <div class="content">
+            <h1>Student Marks <br>Tracking System</h1>
+            <p>Arise, awake, and stop not <br>till the goal is reached.</p>
+            <form action="">  
+                <button class="butn" type="button">read more</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

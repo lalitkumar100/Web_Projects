@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <style>
+       *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    background-color: gray;
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+
+.loginform{
+    width: 420px;
+    height: 320px;
+    background: rgba(255, 255, 255, 0.126);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+.loginform h1{
+    font-size: 36px;
+    text-align: center;
+    color: rgb(237, 104, 104);
+}
+input{
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    background: transparent;
+    border: 2px solid rgba(225,225,225,.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 25px 20px 20px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="loginform">
+        <form action="">
+            <h1>ADMINISTRATOR</h1>
+            <a href="newstudentadd.html"><input  type="button"  value="NEW REGISTER"></a>
+            <a href="admin_marks_entry.html"><input   type="button"  value="ENTRY MARKS"></a>
+           <a href="Allstudentresult.html"><input type="button"  value="SEE ALL STUDENT MARKS"></a>
+         </form>
+    </div>
+</body>
+</html>

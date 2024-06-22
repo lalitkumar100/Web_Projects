@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Entry System</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Student Marks Entry System</legend>
+            <table>
+                <tr>
+                    <td><label>Student Name:</label></td>
+                    <td><input type="text" id="studentName" name="studentName"></td>
+                </tr>
+                <tr>
+                    <td><label>USN Number:</label><br></td>
+                    <td><input type="text" id="usnNo" name="usnno"></td>
+                </tr>
+                <tr>
+                    <td><label>Semester:</label><br></td>
+                    <td><input type="number" id="semester" name="semester"></td>
+                </tr>
+                <tr>
+                    <td><label>Subject Name:</label><br></td>
+                    <td><input type="text" id="subjectName" name="subjectName"></td>
+                </tr>
+                <tr>
+                    <td><label>Course Code:</label></td>
+                    <td><input type="text" id="courseCode" name="courseCode"></td>
+                </tr>
+                <tr>
+                    <td><label>Marks Obtained:</label><br></td>
+                    <td><input type="number" id="marksObtained" name="marksObtained" required></td>
+                </tr>
+                <tr>
+                    <td><label for="grade">Grade:</label></td>
+                    <td><input type="text" id="grade1" name="grade1"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Submit" onclick="addmarks1()"></td>
+                    <td><input type="reset"></td>
+                    <td><a href="administratorpage.html"><input type="button" value="Back"></a></td>
+                    <td><input type="button" value="Display" onclick="display()"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <div id="display"></div>
+</body>
+
+<script>
+    var coursearr = [];
+    var marksarr = [];
+    var gradearr = [];
+    var subarr = [];
+    var namearr = [];
+    var usnarr = [];
+    var semarr = [];
+
+    function addmarks1() {
+        var name = document.getElementById("studentName").value;
+        var usn = document.getElementById("usnNo").value;
+        var sem = document.getElementById("semester").value;
+        var sub = document.getElementById("subjectName").value;
+        var course = document.getElementById("courseCode").value;
+        var marks = document.getElementById("marksObtained").value;
+        var grade = document.getElementById("grade1").value;
+
+        var pattern1 = /^[a-zA-Z\s]+$/;
+        var pattern2 = /^2SD\d{2}[A-Z]{2}\d{3}$/;
+        var pattern3 = /^[1-8]$/;
+        var pattern4 = /^22[A-Z]{4}\d{3}$/;
+        var pattern5 = /^(100|[1-9]?[0-9])$/;
+        var pattern6 = /^[A-F]$/;
+
+        if (name !== "" && usn !== "" && sem !== "" && course !== "" && marks !== "" && grade !== "" && sub !== "") {
+            if (name.match(pattern1) && usn.match(pattern2) && sem.match(pattern3) && course.match(pattern4) && marks.match(pattern5) && grade.match(pattern6)) {
+                coursearr.push(course);
+                marksarr.push(marks);
+                gradearr.push(grade);
+                subarr.push(sub);
+                usnarr.push(usn);
+                namearr.push(name);
+                semarr.push(sem);
+
+                document.getElementById("courseCode").value = "";
+                document.getElementById("marksObtained").value = "";
+                document.getElementById("grade1").value = "";
+                document.getElementById("subjectName").value = "";
+               
+            } else {
+                alert("Invalid data input. Please fill correctly.");
+            }
+        } else {
+            alert("Please fill all the input boxes completely");
+        }
+    }
+
+    function display() {
+        var displayDiv = document.getElementById("display");
+        displayDiv.innerHTML = ""; 
+
+        for (var i = 0; i < coursearr.length; i++) {
+            var entry = document.createElement("p");
+            entry.textContent = "Name: " + namearr[i] + ", USN: " + usnarr[i] + ", Semester: " + semarr[i] +
+                ", Subject Name: " + subarr[i] + ", Course Code: " + coursearr[i] +
+                ", Marks Obtained: " + marksarr[i] + ", Grade: " + gradearr[i];
+            displayDiv.appendChild(entry);
+        }
+    }
+</script>
+</html>

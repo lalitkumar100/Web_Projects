@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new_register.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+
+<body>
+    <div class="loginform">
+        <fieldset style="width: 300px;">
+            <legend>NEW REGISTRATION</legend>
+            <table>
+                <tr>
+                    <td><label for="name">NAME</label></td>
+                    <td><input type="text" id="name" name="name" placeholder="enter name"></td>
+                </tr>
+                <tr>
+                    <td><label for="father-name">FATHER NAME</label></td>
+                    <td><input type="text" id="father-name" name="father-name" placeholder="enter father name"></td>
+                </tr>
+                <tr>
+                    <td><label for="usn">USN NUMBER</label></td>
+                    <td><input type="text" id="usn" name="usn" placeholder="enter USN"></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">GENDER</label></td>
+                    <td>
+                        <input type="radio" name="gender" value="male">Male
+                        <input type="radio" name="gender" value="female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="dob">DATE OF BIRTH</label></td>
+                    <td><input type="date" id="dob" name="dob"></td>
+                </tr>
+                <tr>
+                    <td><label for="branch">BRANCH</label></td>
+                    <td>
+                        <select id="branch" name="branch">
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="ME">ME</option>
+                            <option value="EEE">EEE</option>
+                            <option value="AIML">AIML</option>
+                            <option value="ISE">ISE</option>
+                            <option value="CHEMICAL">CHEMICAL</option>
+                            <option value="CIVIL">CIVIL</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Register" onclick="newregistration()">
+            <a href="administratorpage.html"><input type="button" value="Back"></a>
+        </fieldset>
+    </div>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td><span id="display-name"></span></td>
+        </tr>
+        <tr>
+            <td><span id="display-father-name"></span></td>
+        </tr>
+        <tr>
+            <td><span id="display-usn"></span></td>
+        </tr>
+        <tr>
+            <td><span id="display-gender"></span></td>
+        </tr>
+        <tr>
+            <td><span id="display-dob"></span></td>
+        </tr>
+        <tr>
+            <td><span id="display-branch"></span></td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        function newregistration() {
+            var name=document.getElementById("name").value;
+            var fathername= document.getElementById("father-name").value;
+            var usn= document.getElementById("usn").value;
+
+            var gender=document.getElementsByName("gender");
+            var gen;
+
+            for (var i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    gen = gender[i].value;
+                }
+            }
+        
+            var dob = document.getElementById("dob").value;
+            var branch = document.getElementById("branch").value;
+
+
+
+            document.getElementById("display-name").innerText ="NAME: "+name;
+            document.getElementById("display-father-name").innerText ="FATHER NAME: "+fathername;
+            document.getElementById("display-usn").innerText ="USN: "+usn;
+            document.getElementById("display-gender").innerText ="GENDER: "+gen;
+            document.getElementById("display-dob").innerText ="DATE OF BIRTH: "+dob;
+            document.getElementById("display-branch").innerText ="BRANCH: "+branch;
+        }
+    </script>
+</body>
+
+</html>
