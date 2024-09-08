@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Mukta", sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+.container{
+    display: flex;
+}
+.home ul li{
+    list-style: none;
+    display: flex;
+    gap: 17px;
+    margin: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.librery{
+    min-height: 75vh;
+    position: relative;
+}
+.heading{
+    display: flex;
+    gap: 17px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.footer{
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    bottom: 10px;
+    flex-wrap: wrap;
+    padding: 0px 20px;
+}
+.footer a{
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 11px;  
+}
+.left{
+    width: 27vw;
+}
+.right{
+    width: 73vw;
+    position: relative;
+}
+.nav{
+    display: flex;
+    height: 70px;
+    background-color: rgb(16, 16, 16);
+    align-items: center;
+    padding: 0px 20px;
+    justify-content: space-between;
+}
+.nav button{
+    padding: 10px 32px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.nav button:hover{
+    scale: 1.04;
+}
+.popup{
+    background-color: transparent; 
+    color: #b3b3b3;
+}
+.popup:hover{
+    color: white;
+}
+.title{
+    font-weight: 700;
+    font-size: 24px;
+}
+.spotifyPlaylist{
+    padding: 10px 15px;    
+    width: 100%;
+}
+.cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 68vh;
+    width: 100%;
+}
+.cards{
+    padding: 15px;
+    width: 170px;
+    margin: 10px 10px;
+    font-weight: 400;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    &.cards:hover{
+        background-color: #171717;
+}
+    
+}
+.icon-container {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(4, 229, 4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    position: absolute;
+    bottom: 95px;
+    right: 25px;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+  .icon-container svg {
+    width: 70%;
+    height: 70%;
+  }
+ 
+ .cards:hover .icon-container{
+    opacity: 1;
+    bottom: 120px;
+ } 
+.cards span{
+    font-size: 14px;
+    color: #b3b3b3;
+}
+.cards img{
+    width: 165px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.music-nav-button{
+    position: absolute;
+    bottom: 28px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+}
+.music-nav-button img{
+    width: 35px;
+    filter: invert(1);
+    cursor: pointer;
+}
+.songlist{
+    padding: 15px 15px 15px 15px;
+    height: 352px;
+    overflow-y: scroll;
+    
+}
+.songlist ul li{
+    list-style-type: decimal;
+    display: flex;
+    gap: 20px;
+    border: 0.5px #595858 solid;
+    padding: 1px 10px;
+    margin: 0px 0px 8px 0px;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 12px 10px;
+    margin-bottom: 15px;
+}
+.songlist img{
+    width: 20px;
+}
+.songInfo{
+    font-size: 13px;
+    width: 70px;
+    width: 130px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.playsong{
+    width: 70px;
+    
+}
+.rangeslider{
+    width: 99%;
+    background-color: white;
+    height: 6px;
+    position: absolute;
+    bottom: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.circle{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: wheat;
+    position: relative;
+    bottom: 5px;
+    left: 0%;
+    cursor: pointer;
+    transition: left 0.5s;
+}
+.songDetails{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 20px;
+    font-size: 22px;
+    font-weight: 100;
+}
+
+@media (max-width:1200px) {
+    .left{
+        position: absolute;
+        left: -1600%;
+        transition: all 0.1s;
+        width: 335px;
+        height: 90vh;
+        z-index: 1;
+    }
+    .right{
+        width: 100vw;
+        position: relative;
+        overflow: hidden;
+    }
+    .spotifyPlaylist{
+        width: 100vw;
+    }
+    .cardcontainer{
+        padding: 0px 65px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 88%;
+    }
+}
